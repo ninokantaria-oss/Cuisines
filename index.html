@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savor Europe | European Cuisine & Culinary Traditions</title>
+  <meta name="description" content="Embark on an epicurean journey across Europe. Discover UNESCO culinary heritage, ancestral rituals, regional recipes, wine pairings, and living food traditions.">
+  <meta name="keywords" content="European cuisine, European traditions, Mediterranean diet, French gastronomy, Georgian Supra, Italian pasta, UNESCO food heritage, regional recipes">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Savor Europe | European Cuisine & Culinary Traditions">
+  <meta property="og:description" content="Explore the soul of European gastronomy, living culinary rituals, and master recipes.">
+  <meta property="og:image" content="assets/images/hero_feast.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="Savor Europe Home">
+        <div class="brand-crest">
+          <i class="fa-solid fa-wheat-awn"></i>
+        </div>
+        <div class="brand-name">
+          <span data-i18n="brand_title">SAVOR EUROPE</span>
+          <span class="brand-tagline" data-i18n="brand_tagline">CULINARY HERITAGE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#regions" class="nav-link" data-i18n="nav_regions">Regional Cuisines</a></li>
+          <li><a href="#traditions" class="nav-link" data-i18n="nav_traditions">Living Traditions</a></li>
+          <li><a href="#sommelier" class="nav-link" data-i18n="nav_sommelier">Terroir & Pairings</a></li>
+          <li><a href="#quiz" class="nav-link" data-i18n="nav_quiz">Culinary Quiz</a></li>
+          <li><a href="#festivals" class="nav-link" data-i18n="nav_festivals">Harvest Calendar</a></li>
+          <li><a href="#connect" class="nav-link" data-i18n="nav_connect">Connect & Reserve</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Controls: Ambience, Language, Saved, Mobile Menu -->
+      <div class="nav-controls">
+        <!-- Bistro Soundscape Generator -->
+        <button class="btn-sound-toggle" id="soundToggle" aria-label="Toggle Bistro Ambience Audio" title="Experience Tavern & Bistro Ambience">
+          <div class="sound-wave">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </div>
+          <span class="sound-text" data-i18n="sound_btn">Ambience</span>
+        </button>
+
+        <!-- Language Switcher (🇬🇪 KA / 🇬🇧 EN) -->
+        <button class="btn-lang-toggle" id="langToggle" aria-label="Switch Language" title="შეცვალეთ ენა ქართულად">
+          <span class="flag-icon">🇬🇪</span>
+          <span class="lang-text">ქართული</span>
+        </button>
+
+        <!-- Saved Recipes / Tasting Book -->
+        <button class="btn-saved-dishes" id="openSavedBtn" aria-label="Saved Recipes" title="View Saved Culinary Favorites">
+          <i class="fa-regular fa-bookmark"></i>
+          <span class="saved-counter" id="savedCount">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="btn-mobile-menu" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer" style="display: none;">
+    <div class="mobile-drawer-inner">
+      <ul class="mobile-nav-list">
+        <li><a href="#regions" class="mobile-link" data-i18n="nav_regions">Regional Cuisines</a></li>
+        <li><a href="#traditions" class="mobile-link" data-i18n="nav_traditions">Living Traditions</a></li>
+        <li><a href="#sommelier" class="mobile-link" data-i18n="nav_sommelier">Terroir & Pairings</a></li>
+        <li><a href="#quiz" class="mobile-link" data-i18n="nav_quiz">Culinary Quiz</a></li>
+        <li><a href="#festivals" class="mobile-link" data-i18n="nav_festivals">Harvest Calendar</a></li>
+        <li><a href="#connect" class="mobile-link" data-i18n="nav_connect">Connect & Reserve</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-backdrop">
+      <img src="assets/images/hero_feast.jpg" alt="European gourmet banquet table with wine, sourdough, artisanal cheese and Mediterranean fare" class="hero-image" id="heroImage">
+      <div class="hero-overlay"></div>
+      <canvas class="hero-particles-canvas" id="particlesCanvas"></canvas>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-wrap">
+        <span class="hero-badge">
+          <i class="fa-solid fa-award"></i>
+          <span data-i18n="hero_badge">UNESCO Intangible Cultural Heritage of Food</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_1">A Grand Journey Through</span><br>
+        <span class="text-gold" data-i18n="hero_title_2">European Cuisine & Timeless Traditions</span>
+      </h1>
+
+      <p class="hero-description" data-i18n="hero_desc">
+        From the candlelit cellars of Burgundy and sun-drenched olive groves of Tuscany to the ancient 8,000-year Georgian Supra feast and Nordic foraging hearths — immerse yourself in Europe's most sacred culinary rituals, protected terroirs, and heirloom flavors.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#regions" class="btn-primary" id="exploreBtn">
+          <span data-i18n="hero_cta_explore">Explore Regional Cuisines</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#quiz" class="btn-secondary" id="quizCtaBtn">
+          <i class="fa-solid fa-compass"></i>
+          <span data-i18n="hero_cta_quiz">Find Your Culinary Spirit</span>
+        </a>
+      </div>
+
+      <!-- Hero Stats Bar -->
+      <div class="hero-stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">44+</span>
+          <span class="stat-label" data-i18n="stat_1">Culinary Cultures</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1,400+</span>
+          <span class="stat-label" data-i18n="stat_2">Protected Terroirs (AOC/PDO)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">8,000+</span>
+          <span class="stat-label" data-i18n="stat_3">Years of Winemaking Roots</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label" data-i18n="stat_4">Heirloom Recipes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       REGIONAL CUISINES & MASTER DISHES SECTION
+       ========================================================================= -->
+  <section class="section-regional" id="regions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="reg_badge">Terroir & Provenance</span>
+        <h2 class="section-title">
+          <span data-i18n="reg_title_1">Iconic Dishes of the</span> <span class="text-gold" data-i18n="reg_title_2">European Continent</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="reg_subtitle">
+          Every European plate tells a story of soil, climate, ancestral hearths, and communal joy. Filter across renowned culinary provinces or search your favorite ingredients.
+        </p>
+      </div>
+
+      <!-- Regional Tabs -->
+      <div class="regional-filter-tabs" id="regionTabs">
+        <button class="filter-tab active" data-filter="all">
+          <i class="fa-solid fa-earth-europe"></i>
+          <span data-i18n="tab_all">All Europe</span>
+        </button>
+        <button class="filter-tab" data-filter="mediterranean">
+          <i class="fa-solid fa-sun"></i>
+          <span data-i18n="tab_mediterranean">Mediterranean Basin</span>
+        </button>
+        <button class="filter-tab" data-filter="french">
+          <i class="fa-solid fa-wine-glass"></i>
+          <span data-i18n="tab_french">French Haute Cuisine</span>
+        </button>
+        <button class="filter-tab" data-filter="eastern">
+          <i class="fa-solid fa-jar"></i>
+          <span data-i18n="tab_eastern">Caucasus & Eastern Europe</span>
+        </button>
+        <button class="filter-tab" data-filter="alpine">
+          <i class="fa-solid fa-mountain"></i>
+          <span data-i18n="tab_alpine">Central & Alpine</span>
+        </button>
+        <button class="filter-tab" data-filter="nordic">
+          <i class="fa-solid fa-snowflake"></i>
+          <span data-i18n="tab_nordic">Nordic & Baltic</span>
+        </button>
+      </div>
+
+      <!-- Search & Results Counter -->
+      <div class="explorer-search-bar">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="dishSearchInput" placeholder="Search dishes by name, region, or ingredient (e.g. Saffron, Truffle, Khachapuri, Cheese)..." data-i18n-ph="search_placeholder">
+        </div>
+        <div class="dish-results-count" id="resultsCount">
+          Showing 8 Signature Culinary Masterpieces
+        </div>
+      </div>
+
+      <!-- Dish Grid Container (Rendered by JS) -->
+      <div class="dishes-grid" id="dishesGrid">
+        <!-- Injected dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       LIVING TRADITIONS & CULTURAL RITUALS SECTION
+       ========================================================================= -->
+  <section class="section-traditions" id="traditions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="trad_badge">Living Heritage</span>
+        <h2 class="section-title">
+          <span data-i18n="trad_title_1">The Sacred Rituals of</span> <span class="text-gold" data-i18n="trad_title_2">European Dining</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="trad_subtitle">
+          In Europe, eating has never been merely about sustenance; it is a communion of speech, song, seasonal reverence, and generational hospitality.
+        </p>
+      </div>
+
+      <div class="traditions-container">
+        <!-- Visual Showcase Column -->
+        <div class="tradition-showcase-visual">
+          <img src="assets/images/georgian_supra.jpg" alt="Georgian Supra traditional feast" class="tradition-active-img" id="traditionImg">
+          <div class="tradition-visual-overlay">
+            <span class="tradition-visual-caption" id="traditionCaption">Caucasus Cradle & Ancient Heritage</span>
+            <h3 class="tradition-visual-title" id="traditionHeadline">The Georgian Supra & Tamada Eloquence</h3>
+            <p id="traditionSnippet" style="font-size: 0.95rem; color: #d0d4dc;">
+              A feast transformed into philosophical theater, guided by the toastmaster (Tamada) with 8,000-year-old Kvevri clay amber wine.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Nav Tabs Column -->
+        <div class="tradition-tabs-list" id="traditionsNav">
+          <!-- 1. Georgian Supra -->
+          <div class="tradition-nav-item active" data-tradition="supra">
+            <div class="tradition-item-icon">
+              <i class="fa-solid fa-hands-holding-circle"></i>
+            </div>
+            <div class="tradition-item-body">
+              <h4 data-i18n="trad_supra_title">The Georgian Supra & Tamada Ritual</h4>
+              <p data-i18n="trad_supra_desc">
+                The supreme celebration of hospitality. Guided by the Tamada, toasts honor ancestors, peace, love, and sacred earth over steaming Khachapuri, Khinkali, and amber Kvevri wine.
+              </p>
+              <span class="tradition-ritual-badge">
+                <i class="fa-solid fa-landmark"></i> UNESCO Intangible Cultural Heritage
+              </span>
+            </div>
+          </div>
+
+          <!-- 2. The French Gastronomic Meal -->
+          <div class="tradition-nav-item" data-tradition="french_meal">
+            <div class="tradition-item-icon">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div class="tradition-item-body">
+              <h4 data-i18n="trad_french_title">The French Gastronomic Meal (Repas Gastronomique)</h4>
+              <p data-i18n="trad_french_desc">
+                An art of convivial celebration emphasizing good fellowship, the taste of terroir, pairing exquisite wines with courses, and meticulously orchestrated table dressing.
+              </p>
+              <span class="tradition-ritual-badge">
+                <i class="fa-solid fa-landmark"></i> UNESCO Masterpiece of Heritage
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. The Mediterranean Conviviality -->
+          <div class="tradition-nav-item" data-tradition="mediterranean_diet">
+            <div class="tradition-item-icon">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div class="tradition-item-body">
+              <h4 data-i18n="trad_med_title">Mediterranean Diet & Long Sunday Feasts</h4>
+              <p data-i18n="trad_med_desc">
+                Far more than nutrition: an ancestral social ritual where three generations gather around endless mezze, extra-virgin olive oil, hand-rolled pasta, and spirited storytelling.
+              </p>
+              <span class="tradition-ritual-badge">
+                <i class="fa-solid fa-landmark"></i> UNESCO Diet of Longevity & Conviviality
+              </span>
+            </div>
+          </div>
+
+          <!-- 4. Nordic Fika & Foraging -->
+          <div class="tradition-nav-item" data-tradition="nordic_fika">
+            <div class="tradition-item-icon">
+              <i class="fa-solid fa-mug-saucer"></i>
+            </div>
+            <div class="tradition-item-body">
+              <h4 data-i18n="trad_nordic_title">Nordic "Fika" & Foraged Wilderness</h4>
+              <p data-i18n="trad_nordic_desc">
+                The sacred Scandinavian pause: freshly ground dark coffee, warm cardamom buns (Kardemummabullar), and an intimate bond with coastal smoking and arctic forest foraging.
+              </p>
+              <span class="tradition-ritual-badge">
+                <i class="fa-solid fa-clock"></i> Daily Nordic Mindfulness Ritual
+              </span>
+            </div>
+          </div>
+
+          <!-- 5. Spanish Tapeo & Passeggiata -->
+          <div class="tradition-nav-item" data-tradition="spanish_tapeo">
+            <div class="tradition-item-icon">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="tradition-item-body">
+              <h4 data-i18n="trad_spain_title">The Art of the Tapeo & Basque Pintxos Crawl</h4>
+              <p data-i18n="trad_spain_desc">
+                Moving freely from tavern to tavern, savoring bite-sized masterpieces perched on skewers, pouring natural Basque cider from heights, and laughing into the twilight.
+              </p>
+              <span class="tradition-ritual-badge">
+                <i class="fa-solid fa-users"></i> The Social Pulse of the Iberian Peninsula
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SOMMELIER & TERROIR PAIRING STUDIO
+       ========================================================================= -->
+  <section class="section-sommelier" id="sommelier">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="somm_badge">Cellar & Terroir Harmonization</span>
+        <h2 class="section-title">
+          <span data-i18n="somm_title_1">The Interactive European</span> <span class="text-gold" data-i18n="somm_title_2">Sommelier & Fromagerie</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="somm_subtitle">
+          Select an iconic pairing style to discover the time-honored matches between Europe's greatest artisan cheeses, historic grand cru wines, and hearth-baked breads.
+        </p>
+      </div>
+
+      <div class="pairing-studio-card">
+        <!-- Interactive Category Switcher -->
+        <div class="pairing-selector-row">
+          <button class="pairing-category-btn active" data-pairing="wine">
+            <i class="fa-solid fa-wine-bottle"></i>
+            <span data-i18n="somm_cat_wine">Historic Grand Crus</span>
+          </button>
+          <button class="pairing-category-btn" data-pairing="cheese">
+            <i class="fa-solid fa-cheese"></i>
+            <span data-i18n="somm_cat_cheese">Artisan Raw Cheeses</span>
+          </button>
+          <button class="pairing-category-btn" data-pairing="bread">
+            <i class="fa-solid fa-bread-slice"></i>
+            <span data-i18n="somm_cat_bread">Hearth Breads & Grains</span>
+          </button>
+          <button class="pairing-category-btn" data-pairing="kvevri">
+            <i class="fa-solid fa-fire-burner"></i>
+            <span data-i18n="somm_cat_kvevri">Ancient Kvevri & Amber</span>
+          </button>
+        </div>
+
+        <!-- Pairing Display Area -->
+        <div class="pairing-display-area" id="pairingContent">
+          <!-- Dynamic Sommelier Output -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE "FIND YOUR CULINARY SPIRIT" QUIZ
+       ========================================================================= -->
+  <section class="section-quiz" id="quiz">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="quiz_badge">Interactive Gastronomic Journey</span>
+        <h2 class="section-title">
+          <span data-i18n="quiz_title_1">Discover Your European</span> <span class="text-gold" data-i18n="quiz_title_2">Culinary Soul</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="quiz_subtitle">
+          Answer 4 sensory questions about your palate, dining philosophy, and spirit. We will match you with your authentic European gastronomic archetype and signature ancestral recipe.
+        </p>
+      </div>
+
+      <div class="quiz-container-box">
+        <!-- Progress Bar -->
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-fill" id="quizProgressBar"></div>
+        </div>
+
+        <!-- Step Questions Container -->
+        <div id="quizQuestionWrap">
+          <div class="quiz-step-header">
+            <div class="quiz-step-counter" id="quizStepCounter">Question 1 of 4</div>
+            <h3 class="quiz-question-title" id="quizQuestionTitle">What is your dream dining atmosphere?</h3>
+          </div>
+
+          <!-- Options Grid -->
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Options populated dynamically -->
+          </div>
+
+          <div class="quiz-nav-footer">
+            <button class="btn-secondary" id="quizPrevBtn" style="visibility: hidden;">
+              <i class="fa-solid fa-arrow-left"></i> <span data-i18n="quiz_prev">Previous</span>
+            </button>
+            <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="quiz_hint">Select an option to advance</span>
+          </div>
+        </div>
+
+        <!-- Quiz Result Box (Initially Hidden) -->
+        <div class="quiz-result-box" id="quizResultBox">
+          <div class="quiz-result-badge-crest" id="quizResultCrest">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="quiz-result-archetype" id="quizResultArchetype">The Mediterranean Sun Connoisseur</h3>
+          <p class="quiz-result-description" id="quizResultDesc">
+            Your soul resonates with warm laughter under olive trees, cold pressed olive oil, freshly twirled pasta, and long unhurried feasts with those you cherish.
+          </p>
+          <div class="quiz-result-signature-dish" id="quizSignatureDish">
+            <!-- Signature dish badge -->
+          </div>
+          <br>
+          <button class="btn-primary" id="quizRetakeBtn">
+            <i class="fa-solid fa-rotate-right"></i> <span data-i18n="quiz_retake">Retake Quiz</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SEASONAL HARVEST & CULINARY FESTIVALS
+       ========================================================================= -->
+  <section class="section-festivals" id="festivals">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="fest_badge">The Cycle of Earth & Season</span>
+        <h2 class="section-title">
+          <span data-i18n="fest_title_1">The Great Culinary Festivals</span> <span class="text-gold" data-i18n="fest_title_2">of Europe</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="fest_subtitle">
+          From the damp autumn oak forests yielding white truffles to ancient harvest grape-pressing and midsummer fish banquets under the midnight sun.
+        </p>
+      </div>
+
+      <div class="festivals-timeline">
+        <!-- Festival 1: Alba Truffles -->
+        <div class="festival-card">
+          <span class="festival-month-badge" data-i18n="fest_1_date">October – November</span>
+          <h3 class="festival-title" data-i18n="fest_1_title">Alba White Truffle Fair</h3>
+          <div class="festival-location">
+            <i class="fa-solid fa-location-dot"></i> <span>Piedmont, Italy</span>
+          </div>
+          <p class="festival-desc" data-i18n="fest_1_desc">
+            The world's most aromatic culinary spectacle. Truffle hunters (trifolao) and their trained dogs search misty Langhe hills for subterranean "white diamonds", paired with aged Barolo.
+          </p>
+        </div>
+
+        <!-- Festival 2: Tbilisoba & Rtveli -->
+        <div class="festival-card">
+          <span class="festival-month-badge" data-i18n="fest_2_date">September – October</span>
+          <h3 class="festival-title" data-i18n="fest_2_title">Rtveli & Tbilisoba Harvest</h3>
+          <div class="festival-location">
+            <i class="fa-solid fa-location-dot"></i> <span>Kakheti & Tbilisi, Georgia</span>
+          </div>
+          <p class="festival-desc" data-i18n="fest_2_desc">
+            An 8,000-year-old unbroken ritual. Families crush indigenous Saperavi & Rkatsiteli grapes into clay Kvevri vessels, dipping walnut strings into hot grape Tatara for Churchkhela.
+          </p>
+        </div>
+
+        <!-- Festival 3: Fête de la Gastronomie -->
+        <div class="festival-card">
+          <span class="festival-month-badge" data-i18n="fest_3_date">Late September</span>
+          <h3 class="festival-title" data-i18n="fest_3_title">Fête de la Gastronomie</h3>
+          <div class="festival-location">
+            <i class="fa-solid fa-location-dot"></i> <span>Paris & Burgundy, France</span>
+          </div>
+          <p class="festival-desc" data-i18n="fest_3_desc">
+            A nationwide celebration of France's UNESCO-honored food heritage. Open-air banquets, master chef demos, artisanal charcuterie tastings, and Grand Cru cellar tastings.
+          </p>
+        </div>
+
+        <!-- Festival 4: Midsummer Feast -->
+        <div class="festival-card">
+          <span class="festival-month-badge" data-i18n="fest_4_date">June Summer Solstice</span>
+          <h3 class="festival-title" data-i18n="fest_4_title">Nordic Midsommar Feast</h3>
+          <div class="festival-location">
+            <i class="fa-solid fa-location-dot"></i> <span>Stockholm & Dalarna, Sweden</span>
+          </div>
+          <p class="festival-desc" data-i18n="fest_4_desc">
+            Dancing under 24-hour daylight. Long rustic outdoor tables laden with pickled Baltic herring (sill), fresh new potatoes boiled with fresh dill, sour cream, and wild strawberries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       HERITAGE & UNESCO PRESERVATION MANIFESTO
+       ========================================================================= -->
+  <section class="section-manifesto">
+    <div class="container">
+      <div class="manifesto-grid">
+        <div class="manifesto-col">
+          <div class="manifesto-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h4 data-i18n="mani_1_title">Heirloom Terroirs & Seeds</h4>
+          <p data-i18n="mani_1_desc">
+            Protecting ancient biodiversity: ancient Emmer grains, rare heritage grape varietals, and mountain pastures that yield unparalleled complexity.
+          </p>
+        </div>
+
+        <div class="manifesto-col">
+          <div class="manifesto-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h4 data-i18n="mani_2_title">Artisanal Craftsmanship</h4>
+          <p data-i18n="mani_2_desc">
+            Honoring the master cheese-makers, sourdough bakers, Kvevri clay potters, and curing cellars who refuse industrial shortcuts in favor of slow mastery.
+          </p>
+        </div>
+
+        <div class="manifesto-col">
+          <div class="manifesto-icon">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h4 data-i18n="mani_3_title">Communal Conviviality</h4>
+          <p data-i18n="mani_3_desc">
+            Food is Europe's emotional language. The table is a sanctuary where memory is passed forward, song is shared, and strangers become family.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       NEWSLETTER & CULINARY ALMANAC
+       ========================================================================= -->
+  <section class="section-almanac">
+    <div class="container">
+      <div class="almanac-banner">
+        <span class="section-label" style="margin-bottom: 12px;" data-i18n="almanac_badge">Complimentary Epicurean Guide</span>
+        <h3 data-i18n="almanac_title">Receive The 2026 European Culinary Almanac</h3>
+        <p data-i18n="almanac_subtitle">
+          A beautifully curated digital guide featuring 40 ancestral recipes, harvest dates, sommelier tasting charts, and unvarnished culinary histories.
+        </p>
+
+        <form class="almanac-form" id="almanacForm" onsubmit="event.preventDefault(); window.savorEurope.handleAlmanacSubmit();">
+          <input type="email" class="almanac-input" id="almanacEmail" placeholder="Enter your email address..." required data-i18n-ph="almanac_ph">
+          <button type="submit" class="btn-primary">
+            <i class="fa-solid fa-book-open"></i>
+            <span data-i18n="almanac_btn">Get Free Almanac</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONNECT & CULINARY CONCIERGE (TABLE RESERVATION & ARTISAN NETWORK)
+       ========================================================================= -->
+  <section class="section-connect" id="connect">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="conn_badge">Culinary Concierge & Connection</span>
+        <h2 class="section-title">
+          <span data-i18n="conn_title_1">Connect With European Masters &</span> <span class="text-gold" data-i18n="conn_title_2">Reserve Your Feast</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="conn_subtitle">
+          Whether planning an authentic 8,000-year Georgian Supra banquet, a candlelit Tuscan vineyard tasting, or a private masterclass with heritage bakers — connect directly with our culinary curators across Europe.
+        </p>
+      </div>
+
+      <div class="connect-container-grid">
+        <!-- Column 1: Interactive Reservation & Experience Inquiry Form -->
+        <div class="connect-form-card">
+          <form id="connectForm" onsubmit="event.preventDefault(); window.savorEurope.handleConnectSubmit();">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="guestName" class="form-label">
+                  <i class="fa-solid fa-user"></i>
+                  <span data-i18n="conn_name_label">Your Full Name</span>
+                </label>
+                <div class="form-control-wrap">
+                  <input type="text" id="guestName" class="form-input" placeholder="e.g. Nino Kakhadze" required data-i18n-ph="conn_name_ph">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="guestEmail" class="form-label">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span data-i18n="conn_email_label">Email Address</span>
+                </label>
+                <div class="form-control-wrap">
+                  <input type="email" id="guestEmail" class="form-input" placeholder="e.g. nino@example.com" required data-i18n-ph="conn_email_ph">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="experienceType" class="form-label">
+                  <i class="fa-solid fa-utensils"></i>
+                  <span data-i18n="conn_exp_label">Culinary Experience</span>
+                </label>
+                <select id="experienceType" class="form-select" required>
+                  <option value="georgian_supra" data-i18n="exp_supra">Traditional Georgian Supra Banquet (Tbilisi / Kakheti)</option>
+                  <option value="tuscan_tasting" data-i18n="exp_tuscany">Tuscan Vineyard & Truffle Pairing (Florence / Siena)</option>
+                  <option value="parisian_brasserie" data-i18n="exp_paris">Parisian Grand Cru Haute Gastronomy (Paris / Lyon)</option>
+                  <option value="nordic_foraging" data-i18n="exp_nordic">Nordic Wild Foraging & Smoked Sea Feast (Copenhagen)</option>
+                  <option value="alpine_hearth" data-i18n="exp_alpine">Swiss Alpine Fondue & Hearth Evening (Zermatt / Valais)</option>
+                  <option value="artisan_inquiry" data-i18n="exp_artisan">Artisan Guild Collaboration / General Connection</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="guestCount" class="form-label">
+                  <i class="fa-solid fa-users"></i>
+                  <span data-i18n="conn_guests_label">Party Size / Guests</span>
+                </label>
+                <select id="guestCount" class="form-select">
+                  <option value="2 Guests" data-i18n="guest_2">Intimate Table (2 Guests)</option>
+                  <option value="4 Guests" data-i18n="guest_4">Family / Friends (4 Guests)</option>
+                  <option value="6-10 Guests" data-i18n="guest_small">Private Room (6–10 Guests)</option>
+                  <option value="12+ Grand Supra" data-i18n="guest_large">Grand Banquet / Supra (12+ Guests)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="reserveDate" class="form-label">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <span data-i18n="conn_date_label">Preferred Date</span>
+                </label>
+                <input type="date" id="reserveDate" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sommelierOption" class="form-label">
+                  <i class="fa-solid fa-wine-glass"></i>
+                  <span data-i18n="conn_somm_label">Sommelier Curation</span>
+                </label>
+                <select id="sommelierOption" class="form-select">
+                  <option value="kvevri_amber" data-i18n="somm_opt_1">Ancient 8000-Yr Kvevri Amber & Saperavi Flight</option>
+                  <option value="grand_cru" data-i18n="somm_opt_2">European Grand Cru & Biodynamic Terroirs</option>
+                  <option value="artisan_non_alc" data-i18n="somm_opt_3">Botanical Fermentations & Non-Alcoholic Pairings</option>
+                  <option value="somm_choice" data-i18n="somm_opt_4">Chef & Sommelier Sur-Mesure Selection</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="specialNotes" class="form-label">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <span data-i18n="conn_notes_label">Special Requests, Dietary Preferences & Inquiries</span>
+              </label>
+              <textarea id="specialNotes" class="form-textarea" placeholder="Tell us about dietary preferences, celebratory occasions, or specific artisan connection requests..." data-i18n-ph="conn_notes_ph"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 16px;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="conn_submit_btn">Confirm Connection & Request Experience</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Column 2: European Culinary Hubs & Direct Channels -->
+        <div class="connect-info-col">
+          <!-- Live Concierge Status -->
+          <div class="concierge-status-card">
+            <div class="status-indicator-wrap">
+              <span class="status-pulse-dot"></span>
+              <div class="status-text-group">
+                <h5 data-i18n="concierge_title">European Concierge & Sommelier Desk</h5>
+                <span data-i18n="concierge_online">Active Now • Average Response Time &lt; 15 mins</span>
+              </div>
+            </div>
+            <i class="fa-solid fa-headset" style="font-size: 1.4rem; color: var(--gold-light);"></i>
+          </div>
+
+          <!-- European Ateliers & Consulates Grid -->
+          <div class="ateliers-grid">
+            <!-- Tbilisi Hub -->
+            <div class="atelier-card">
+              <div class="atelier-city-row">
+                <span class="atelier-flag">🇬🇪</span>
+                <span class="atelier-city">Tbilisi Atelier</span>
+              </div>
+              <p class="atelier-address" data-i18n="atelier_tbilisi_addr">
+                Betlemi Quarter 8, Old Tbilisi<br>Georgia (Cradle of Wine)
+              </p>
+              <div class="atelier-contact-links">
+                <a href="tel:+995322910880" class="atelier-link">
+                  <i class="fa-solid fa-phone"></i> +995 32 291 0880
+                </a>
+                <a href="mailto:supra@savoreurope.com" class="atelier-link">
+                  <i class="fa-solid fa-envelope"></i> supra@savoreurope.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Florence Hub -->
+            <div class="atelier-card">
+              <div class="atelier-city-row">
+                <span class="atelier-flag">🇮🇹</span>
+                <span class="atelier-city">Florence Atelier</span>
+              </div>
+              <p class="atelier-address" data-i18n="atelier_florence_addr">
+                Via Santo Spirito 12, Oltrarno<br>Florence, Tuscany, Italy
+              </p>
+              <div class="atelier-contact-links">
+                <a href="tel:+390558294410" class="atelier-link">
+                  <i class="fa-solid fa-phone"></i> +39 055 829 4410
+                </a>
+                <a href="mailto:tuscany@savoreurope.com" class="atelier-link">
+                  <i class="fa-solid fa-envelope"></i> tuscany@savoreurope.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Paris Hub -->
+            <div class="atelier-card">
+              <div class="atelier-city-row">
+                <span class="atelier-flag">🇫🇷</span>
+                <span class="atelier-city">Paris Atelier</span>
+              </div>
+              <p class="atelier-address" data-i18n="atelier_paris_addr">
+                4 Rue de la Gastronomie, 6th Arr.<br>Paris, France
+              </p>
+              <div class="atelier-contact-links">
+                <a href="tel:+33142680022" class="atelier-link">
+                  <i class="fa-solid fa-phone"></i> +33 1 42 68 00 22
+                </a>
+                <a href="mailto:paris@savoreurope.com" class="atelier-link">
+                  <i class="fa-solid fa-envelope"></i> paris@savoreurope.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Copenhagen Hub -->
+            <div class="atelier-card">
+              <div class="atelier-city-row">
+                <span class="atelier-flag">🇩🇰</span>
+                <span class="atelier-city">Nordic Atelier</span>
+              </div>
+              <p class="atelier-address" data-i18n="atelier_nordic_addr">
+                Nyhavn Waterfront 19<br>Copenhagen, Denmark
+              </p>
+              <div class="atelier-contact-links">
+                <a href="tel:+4533127700" class="atelier-link">
+                  <i class="fa-solid fa-phone"></i> +45 33 12 77 00
+                </a>
+                <a href="mailto:nordic@savoreurope.com" class="atelier-link">
+                  <i class="fa-solid fa-envelope"></i> nordic@savoreurope.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social & Digital Channels -->
+          <div class="social-channels-card">
+            <h5 data-i18n="social_title">Connect Across Culinary Communities</h5>
+            <div class="social-buttons-grid">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-social-channel">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" class="btn-social-channel">
+                <i class="fa-brands fa-spotify"></i>
+                <span>Soundscapes</span>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-social-channel">
+                <i class="fa-brands fa-youtube"></i>
+                <span>Masterclasses</span>
+              </a>
+              <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="btn-social-channel">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Direct Concierge</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-crest">
+              <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+            <div class="brand-name">
+              <span data-i18n="brand_title">SAVOR EUROPE</span>
+              <span class="brand-tagline" data-i18n="brand_tagline">CULINARY HERITAGE</span>
+            </div>
+          </div>
+          <p data-i18n="footer_bio">
+            Dedicated to the appreciation, documentation, and preservation of Europe's living culinary traditions, sacred terroirs, and gastronomic humanity.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_regions">Regions</h5>
+          <ul class="footer-links-list">
+            <li><a href="#regions" class="footer-link">Mediterranean Basin</a></li>
+            <li><a href="#regions" class="footer-link">French Gastronomy</a></li>
+            <li><a href="#regions" class="footer-link">Caucasus & Georgia</a></li>
+            <li><a href="#regions" class="footer-link">Central & Alpine</a></li>
+            <li><a href="#regions" class="footer-link">Nordic & Baltic</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_traditions">Traditions</h5>
+          <ul class="footer-links-list">
+            <li><a href="#traditions" class="footer-link">The Georgian Supra</a></li>
+            <li><a href="#traditions" class="footer-link">French Repas Gastronomique</a></li>
+            <li><a href="#traditions" class="footer-link">The Sunday Italian Pranzo</a></li>
+            <li><a href="#traditions" class="footer-link">Nordic Foraging & Fika</a></li>
+            <li><a href="#traditions" class="footer-link">Spanish Tapas Culture</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_heritage">Heritage</h5>
+          <ul class="footer-links-list">
+            <li><a href="#sommelier" class="footer-link">Grand Crus & Kvevri</a></li>
+            <li><a href="#quiz" class="footer-link">Culinary Spirit Test</a></li>
+            <li><a href="#festivals" class="footer-link">European Harvests</a></li>
+            <li><a href="#" class="footer-link" id="footerSavedLink">Tasting Book</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 Savor Europe. <span data-i18n="footer_rights">All European culinary traditions celebrated with reverence.</span>
+        </div>
+        <button class="btn-scroll-top" id="scrollTopBtn" aria-label="Scroll back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: RECIPE & CULTURAL TRADITION DETAILS
+       ========================================================================= -->
+  <div class="modal-backdrop" id="recipeModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-window">
+      <button class="btn-close-modal" id="closeRecipeModalBtn" aria-label="Close details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Hero Header with Image -->
+      <div class="modal-hero-header">
+        <img src="" alt="" class="modal-hero-img" id="modalHeroImg">
+        <div class="modal-hero-overlay">
+          <div class="modal-badge-group">
+            <span class="dish-badge-origin" id="modalCountryBadge">Italy</span>
+            <span class="dish-heritage-tag" id="modalHeritageTag">Heritage</span>
+          </div>
+          <h3 class="modal-title" id="modalDishTitle">Tagliatelle al Tartufo</h3>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Modal Navigation Tabs -->
+        <div class="modal-nav-tabs">
+          <button class="modal-tab-btn active" data-tab="story">
+            <i class="fa-solid fa-book-bookmark"></i> <span data-i18n="modal_tab_story">Tradition & Lore</span>
+          </button>
+          <button class="modal-tab-btn" data-tab="ingredients">
+            <i class="fa-solid fa-basket-shopping"></i> <span data-i18n="modal_tab_ingredients">Ingredients</span>
+          </button>
+          <button class="modal-tab-btn" data-tab="steps">
+            <i class="fa-solid fa-kitchen-set"></i> <span data-i18n="modal_tab_steps">Preparation & Timer</span>
+          </button>
+          <button class="modal-tab-btn" data-tab="pairing">
+            <i class="fa-solid fa-wine-glass"></i> <span data-i18n="modal_tab_pairing">Sommelier Notes</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Story & Tradition -->
+        <div class="modal-tab-pane active" id="modalStoryPane">
+          <p id="modalStoryText" style="line-height: 1.8; font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            Story goes here...
+          </p>
+          <div style="padding: 16px; background: rgba(212, 175, 55, 0.08); border-left: 3px solid var(--gold-primary); border-radius: 4px;">
+            <strong style="color: var(--gold-light); display: block; margin-bottom: 4px;" data-i18n="modal_etiquette">Culinary Etiquette & Ritual:</strong>
+            <span id="modalEtiquetteText" style="font-size: 0.92rem;">Etiquette note</span>
+          </div>
+        </div>
+
+        <!-- Tab 2: Ingredients Checklist -->
+        <div class="modal-tab-pane" id="modalIngredientsPane">
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;" data-i18n="modal_checklist_hint">
+            Tap an ingredient to check it off as you assemble your pantry:
+          </p>
+          <ul class="ingredient-list" id="modalIngredientsList">
+            <!-- Dynamic checklist -->
+          </ul>
+        </div>
+
+        <!-- Tab 3: Step-by-Step Cooking & Timer -->
+        <div class="modal-tab-pane" id="modalStepsPane">
+          <!-- Kitchen Timer -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); border: 1px solid var(--border-gold); padding: 14px 20px; border-radius: var(--radius-md); margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-stopwatch" style="font-size: 1.5rem; color: var(--gold-light);"></i>
+              <div>
+                <strong style="display: block; font-size: 0.9rem;" data-i18n="timer_title">Interactive Kitchen Timer</strong>
+                <span id="timerDisplay" style="font-family: monospace; font-size: 1.3rem; color: var(--gold-light); font-weight: 700;">15:00</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn-secondary" id="timerStartBtn" style="padding: 6px 14px; font-size: 0.85rem;">Start</button>
+              <button class="btn-secondary" id="timerResetBtn" style="padding: 6px 14px; font-size: 0.85rem;">Reset</button>
+            </div>
+          </div>
+
+          <div id="modalStepsList">
+            <!-- Dynamic steps -->
+          </div>
+        </div>
+
+        <!-- Tab 4: Sommelier Notes -->
+        <div class="modal-tab-pane" id="modalPairingPane">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; margin-bottom: 16px;">
+            <h5 style="color: var(--gold-light); font-size: 1.1rem; margin-bottom: 8px;" id="modalWineTitle">Barolo or Brunello di Montalcino</h5>
+            <p id="modalWineNotes" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+              Tasting notes...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: TASTING BOOK (SAVED DISHES)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="savedModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-window" style="max-width: 640px;">
+      <button class="btn-close-modal" id="closeSavedModalBtn" aria-label="Close saved recipes">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="padding: 30px; border-bottom: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-bookmark" style="color: var(--gold-light); font-size: 1.4rem;"></i>
+          <h3 style="font-size: 1.5rem; color: #fff;" data-i18n="tasting_book_title">Your Personal Tasting Book</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;" data-i18n="tasting_book_desc">
+          Your handpicked selection of heirloom European dishes to cook and savor.
+        </p>
+      </div>
+
+      <div style="padding: 30px;">
+        <div id="savedListContainer">
+          <!-- Dynamic saved list -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: EXPERIENCE CONFIRMATION VOUCHER
+       ========================================================================= -->
+  <div class="modal-backdrop" id="voucherModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-window" style="max-width: 680px;">
+      <button class="btn-close-modal" id="closeVoucherModalBtn" aria-label="Close confirmation">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="padding: 40px;">
+        <div class="voucher-card">
+          <div class="voucher-seal">
+            <i class="fa-solid fa-wheat-awn"></i>
+          </div>
+          <span class="section-label" style="margin-bottom: 8px;" data-i18n="voucher_badge">European Culinary Passport</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 6px;" data-i18n="voucher_title">Feast Request Registered!</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 16px;" id="voucherDesc">
+            Your connection inquiry has been assigned to our European head sommelier & culinary curator.
+          </p>
+
+          <div class="voucher-code" id="voucherRefCode">EUR-2026-SUPRA</div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; background: rgba(0,0,0,0.3); padding: 18px; border-radius: var(--radius-md); margin-bottom: 24px; border: 1px solid var(--border-subtle);">
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;" data-i18n="voucher_guest">Guest Name</span>
+              <strong style="display: block; color: #fff; font-size: 0.95rem;" id="voucherGuestName">Nino Kakhadze</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;" data-i18n="voucher_experience">Experience</span>
+              <strong style="display: block; color: var(--gold-light); font-size: 0.95rem;" id="voucherExperience">Georgian Supra Banquet</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;" data-i18n="voucher_date">Date & Time</span>
+              <strong style="display: block; color: #fff; font-size: 0.95rem;" id="voucherDate">October 15, 2026</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;" data-i18n="voucher_party">Party Size</span>
+              <strong style="display: block; color: #fff; font-size: 0.95rem;" id="voucherParty">4 Guests</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="window.print();" style="padding: 12px 24px;">
+              <i class="fa-solid fa-print"></i> <span data-i18n="voucher_print">Print Voucher</span>
+            </button>
+            <button class="btn-secondary" id="voucherDoneBtn" style="padding: 12px 24px;">
+              <span data-i18n="voucher_done">Done</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Bar -->
+  <div class="toast-notice" id="toastNotice">
+    <i class="fa-solid fa-bell" style="color: var(--gold-light);"></i>
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
